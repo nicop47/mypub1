@@ -1,0 +1,28 @@
+---
+- name: aufgabe 4
+  hosts: node1
+  tasks:
+    - name: Create Directory
+      file:
+        path: /src
+        state: directory
+      become: true
+      
+    - name: Create file 1
+      copy:
+        dest: "/src/essen.txt"
+        content: "Burger"
+      become: true
+    
+    - name: Create file 2
+      copy:
+        dest: "/src/date.txt"
+        content: "25.06.2021"
+      become: true
+      
+    - name: Create file 3
+      copy:
+        dest: "/src/ipaddrnode1"
+        content: "3.67.196.44"
+      become: true
+        
